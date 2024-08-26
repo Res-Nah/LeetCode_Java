@@ -11,7 +11,7 @@ import java.util.Set;
 class Solution {
     public boolean isHappy(int n) {
         Set<Integer> record = new HashSet<>();
-        while(n != 1 && !record.contains(n)) {
+        while (n != 1 && !record.contains(n)) {
             record.add(n);
             n = getNextNumber(n);
         }
@@ -20,7 +20,7 @@ class Solution {
 
     public int getNextNumber(int n) {
         int res = 0;
-        while(n > 0) {
+        while (n > 0) {
             int temp = n % 10;
             res += temp * temp;
             n /= 10;
@@ -29,4 +29,3 @@ class Solution {
     }
 }
 // @lc code=end
-

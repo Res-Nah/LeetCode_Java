@@ -13,38 +13,38 @@ class Solution {
         chars = s.toCharArray();
         Stack<Character> stack1 = new Stack<>();
         Stack<Character> stack2 = new Stack<>();
-        for(char ch : chars){
+        for (char ch : chars) {
             stack1.push(ch);
         }
-        while(!stack1.isEmpty()){
-            if(stack2.isEmpty()){
+        while (!stack1.isEmpty()) {
+            if (stack2.isEmpty()) {
                 stack2.push(stack1.pop());
             }
-            if(!stack1.isEmpty()){
+            if (!stack1.isEmpty()) {
                 char c1 = stack1.pop();
-                if(c1 == ')' || c1 == ']' || c1 == '}'){
+                if (c1 == ')' || c1 == ']' || c1 == '}') {
                     stack2.push(c1);
                 }
-                if(c1 == '('){
-                    if(stack2.peek() == ')'){
+                if (c1 == '(') {
+                    if (stack2.peek() == ')') {
                         stack2.pop();
-                    }else{
-                    stack2.push(c1);
-                }
-            }
-                if(c1 == '['){
-                    if(stack2.peek() == ']'){
-                        stack2.pop();
-                    }else{
+                    } else {
                         stack2.push(c1);
+                    }
                 }
-            }
-                if(c1 == '{'){
-                    if(stack2.peek() == '}'){
+                if (c1 == '[') {
+                    if (stack2.peek() == ']') {
                         stack2.pop();
-                    }else{
+                    } else {
                         stack2.push(c1);
-                    }   
+                    }
+                }
+                if (c1 == '{') {
+                    if (stack2.peek() == '}') {
+                        stack2.pop();
+                    } else {
+                        stack2.push(c1);
+                    }
                 }
             }
         }
@@ -52,4 +52,3 @@ class Solution {
     }
 }
 // @lc code=end
-

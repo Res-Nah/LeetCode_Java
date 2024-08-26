@@ -8,8 +8,8 @@
 class Solution {
     public String reverseStr(String s, int k) {
         char[] ch = s.toCharArray();
-        for(int i = 0; i < ch.length; i += 2 * k) {
-            if(i + k <= ch.length) {
+        for (int i = 0; i < ch.length; i += 2 * k) {
+            if (i + k <= ch.length) {
                 reverse(ch, i, i + k - 1);
                 continue;
             }
@@ -19,7 +19,7 @@ class Solution {
     }
 
     public void reverse(char[] ch, int left, int right) {
-        while(left < right) {
+        while (left < right) {
             char temp = ch[left];
             ch[left] = ch[right];
             ch[right] = temp;
@@ -29,4 +29,3 @@ class Solution {
     }
 }
 // @lc code=end
-

@@ -15,21 +15,21 @@ class Solution {
 
     public StringBuilder removeSpace(String s) {
         int start = 0, end = s.length() - 1;
-        while(s.charAt(start) == ' ') {
+        while (s.charAt(start) == ' ') {
             ++start;
         }
-        while(s.charAt(end) == ' ') {
+        while (s.charAt(end) == ' ') {
             --end;
         }
         StringBuilder sb = new StringBuilder();
-        while(start <= end) {
+        while (start <= end) {
             char c = s.charAt(start);
-            if(c != ' ') {
+            if (c != ' ') {
                 sb.append(c);
                 ++start;
             } else {
                 sb.append(' ');
-                while(s.charAt(start) == ' ') {
+                while (s.charAt(start) == ' ') {
                     ++start;
                 }
             }
@@ -38,7 +38,7 @@ class Solution {
     }
 
     public void reverseString(StringBuilder sb, int start, int end) {
-        while(start < end) {
+        while (start < end) {
             char temp = sb.charAt(start);
             sb.setCharAt(start, sb.charAt(end));
             sb.setCharAt(end, temp);
@@ -49,8 +49,8 @@ class Solution {
 
     public void reverseEachWord(StringBuilder sb) {
         int start = 0, end = 0;
-        while(start < sb.length()) {
-            while(end < sb.length() && sb.charAt(end) != ' ') {
+        while (start < sb.length()) {
+            while (end < sb.length() && sb.charAt(end) != ' ') {
                 ++end;
             }
             reverseString(sb, start, end - 1);
@@ -60,4 +60,3 @@ class Solution {
     }
 }
 // @lc code=end
-

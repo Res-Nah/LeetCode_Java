@@ -10,7 +10,7 @@ class Solution {
         int[] next = new int[s.length()];
         getNext(next, s);
         int len = s.length();
-        if(next[len - 1] != 0 && (len % (len - (next[len - 1])) == 0)) {
+        if (next[len - 1] != 0 && (len % (len - (next[len - 1])) == 0)) {
             return true;
         }
         return false;
@@ -19,11 +19,11 @@ class Solution {
     public void getNext(int[] next, String s) {
         int j = 0;
         next[0] = 0;
-        for(int i = 1; i < s.length(); ++i) {
-            while(j > 0 && s.charAt(j) != s.charAt(i)) {
+        for (int i = 1; i < s.length(); ++i) {
+            while (j > 0 && s.charAt(j) != s.charAt(i)) {
                 j = next[j - 1];
             }
-            if(s.charAt(j) == s.charAt(i)) {
+            if (s.charAt(j) == s.charAt(i)) {
                 ++j;
             }
             next[i] = j;
@@ -31,4 +31,3 @@ class Solution {
     }
 }
 // @lc code=end
-
