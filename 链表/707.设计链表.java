@@ -28,43 +28,43 @@ class MyLinkedList {
         this.size = 0;
         this.dummy = new ListNode(-1, null);
     }
-    
+
     public int get(int index) {
-        if(index < 0 || index > size - 1) {
-            return - 1;
+        if (index < 0 || index > size - 1) {
+            return -1;
         }
         ListNode pre = dummy;
-        while(index > 0) {
+        while (index > 0) {
             pre = pre.next;
             index--;
         }
         return pre.next.val;
     }
-    
+
     public void addAtHead(int val) {
         ListNode node = new ListNode(val, dummy.next);
         dummy.next = node;
-        size++; 
+        size++;
     }
-    
+
     public void addAtTail(int val) {
         ListNode node = new ListNode(val, null);
         int index = size;
         ListNode pre = dummy;
-        while(index > 0) {
+        while (index > 0) {
             pre = pre.next;
             index--;
         }
         pre.next = node;
         size++;
     }
-    
+
     public void addAtIndex(int index, int val) {
-        if(index < 0 || index > size) {
-            return ;
+        if (index < 0 || index > size) {
+            return;
         }
         ListNode pre = dummy;
-        while(index > 0) {
+        while (index > 0) {
             pre = pre.next;
             index--;
         }
@@ -72,13 +72,13 @@ class MyLinkedList {
         pre.next = node;
         size++;
     }
-    
+
     public void deleteAtIndex(int index) {
-        if(index < 0 || index > size - 1) {
-            return ;
+        if (index < 0 || index > size - 1) {
+            return;
         }
         ListNode pre = dummy;
-        while(index > 0) {
+        while (index > 0) {
             pre = pre.next;
             index--;
         }

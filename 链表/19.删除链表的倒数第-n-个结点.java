@@ -7,7 +7,7 @@
 // @lc code=start
 /**
  * Definition for singly-linked list.
- * public class ListNode {
+ *     public class ListNode {
  *     int val;
  *     ListNode next;
  *     ListNode() {}
@@ -20,11 +20,11 @@ class Solution {
         ListNode dummy = new ListNode(0, head);
         ListNode fast = dummy;
         ListNode slow = dummy;
-        while(n > 0) {
+        while (n > 0) {
             fast = fast.next;
             n--;
         }
-        while(fast.next != null) {
+        while (fast.next != null) {
             fast = fast.next;
             slow = slow.next;
         }
@@ -33,4 +33,3 @@ class Solution {
     }
 }
 // @lc code=end
-
